@@ -20,5 +20,6 @@ var downloadVideo=function(browser,url){
 exports.videoSwap=function(req,res,next){ 
     var browser=new selenium.Builder().forBrowser('chrome').build(); //each task will spin up it's own browser as appropriate
     downloadVideo(browser,req.query.newVideoURL);
-    delayedBrowserClose(browser, 10000);
+    delayedBrowserClose(browser, 20000);
+    res.end();
 };
