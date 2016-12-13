@@ -11,3 +11,10 @@ exports.findLargestJpeg=function(){
     return lastLink;
 };
 
+exports.getFileName=function(url){
+    var url=url.toString();
+    var slashIndex=url.lastIndexOf("/")+1;
+    var fileName=url.slice(slashIndex);
+    return fileName;
+};
+

@@ -1,5 +1,9 @@
 module.exports={
     fileDetailsForContentRecords:"http://hurricane:blizzard@monitortool.newsinc.com/manage/getcontentdetails.php",
-    controlRoom:"http://administrator:p74e7Ceaa6@control.inform.com/",
+    controlRoom:{
+        url:"https://administrator:p74e7Ceaa6@control.inform.com/",
+        username:"administrator",
+        password:"p74e7Ceaa6"
+    },
     host:"localhost:4000/"
 };
