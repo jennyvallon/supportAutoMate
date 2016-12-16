@@ -5,5 +5,10 @@ module.exports={
         username:"administrator",
         password:"p74e7Ceaa6"
     },
-    host:"localhost:4000/"
+    host:"localhost:4000/",
+    manageTool:{
+        url:"http://tools.newsinc.com/manage",
+        username:"jvallon@newsinc.com",
+        password:"Inform.9876"
+    }
 };

@@ -54,3 +54,21 @@ exports.downloadAsset=function(browser,url){ // downloads file passed in passed 
     browser.executeScript(dom.createDownloadLink,url);
     browser.findElement(By.id('clickMe')).click(); 
 };
+
+exports.findVideo=function(browser,videoTitle){
+    var vidName=videoTitle;
+    var promise= browser.executeScript(function(vidName){
+            var now= new Date();
+            var labels=document.getElementsByTagName("label");
+            for(i=0;i<labels.length;i++){
+                if(labels[i].innerText===vidName){
+                    var vidid=labels[i].parentElement.parentElement.id;
+                    console.log("FOUND");
+                    console.log(now+" Found video titled "+ vidName);
+                    console.log("ID is "+vidid);
+                    return vidid;
+                }
+            } 
+        },vidName);
+    return promise;
+};
