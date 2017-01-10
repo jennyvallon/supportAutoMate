@@ -60,9 +60,9 @@ return new Promise(function poop(resolve){
             if(result.indexOf(key.title)!==-1){
                 console.log("SUCCESS");
                 var id=result.slice((result.indexOf(key.title)-43),(result.indexOf(key.title)-35));
-                resolve(id);
+                return resolve(id);
             }
-            poop();
+            poop(resolve);
         }); 
     });
 };

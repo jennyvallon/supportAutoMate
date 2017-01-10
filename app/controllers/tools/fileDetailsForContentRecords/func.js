@@ -8,6 +8,15 @@ var goTo=require('../../config.controller');
 var func=require('../toolAgnostic.func'); 
 
 
+var findLargestJpeg=function(){
+    var array=document.getElementsByTagName("a");
+    var length= array.length;
+    var lastLink=array[length-1];
+    return lastLink; 
+};
+
+exports.findLargestJpeg=findLargestJpeg;
+
 exports.downloadVideoThumbnail=function(browser,videoID,res,req){
     this.login(browser,videoID);
     browser.findElement(By.js(findLargestJpeg)).click();
@@ -20,16 +29,6 @@ exports.downloadVideoThumbnail=function(browser,videoID,res,req){
         return res.locals.thumbnail;
     });
 };
-
-var findLargestJpeg=function(){
-    var array=document.getElementsByTagName("a");
-    var length= array.length;
-    var lastLink=array[length-1];
-    return lastLink; 
-};
-
-exports.findLargestJpeg=findLargestJpeg;
-
 
 exports.login=function(browser,key){ //login and find 
     browser.get(goTo.fileDetailsForContentRecords);

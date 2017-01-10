@@ -34,11 +34,9 @@ exports.returnString=function(contentToSearch,leftStringContent,rightStringConte
     return result;
 };
 
-
-
-exports.downloadAsset=function(browser,url){ // downloads file passed in passed browser instance 
+exports.downloadAsset=function(browser,assetUrl){ // downloads file passed in passed browser instance 
     browser.get(goTo.host);
-    browser.executeScript(this.createDownloadLink,url);
+    browser.executeScript(this.createDownloadLink,assetUrl);
     browser.findElement(By.id('clickMe')).click(); 
 };
 
@@ -47,10 +45,6 @@ exports.getFileName=function(url){
     var slashIndex=URL.lastIndexOf("/")+1;//so that slash is not included
     var fileName=URL.slice(slashIndex);
     return fileName;
-};
-
-exports.end=function(res,req){
-    res.end();
 };
 
 exports.uniqueNumberFunction = (function() {
