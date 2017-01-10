@@ -1,1 +1,1 @@
-var browser= require('../../app/controllers/selenium.task.server.controller');module.exports = function(app) {        app.route('/videoSwap?') //newVideoURL=****&oldVideoId=****&ticketNum=****            .get(browser.videoSwap)    ;};
+var tasks= require('../controllers/tasks.controller');module.exports = function(app) {        app.route('/videoSwap?') //newVideoURL=****&oldVideoId=****&ticketNum=****            .get(tasks.videoSwap)    ;}; 

@@ -1,4 +1,6 @@
+
 module.exports={
+    defaultDownloadPath:"/Users/jvallon/Downloads/",
     fileDetailsForContentRecords:"http://hurricane:blizzard@monitortool.newsinc.com/manage/getcontentdetails.php",
     controlRoom:{
         url:"https://administrator:p74e7Ceaa6@control.inform.com/",
@@ -10,5 +12,5 @@ module.exports={
         url:"http://tools.newsinc.com/manage",
         username:"jvallon@newsinc.com",
         password:"Inform.9876"
-    }
+    }          
 };
