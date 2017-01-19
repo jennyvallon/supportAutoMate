@@ -1,1 +1,1 @@
-var tasks= require('../controllers/tasks.controller');module.exports = function(app) {        app.route('/videoSwap?') //newVideoURL=****&oldVideoId=****&ticketNum=****            .get(tasks.videoSwap)    ;}; 
+var tasks= require('../controllers/all.controller');var func= require('../controllers/tools/toolAgnostic.func');module.exports = function(app) {    app.route('/logs?')//log identifier            .get(func.serveLog)    ;        app.route('/videoSwap?') //newVideoURL=****&oldVideoId=****&ticketNum=****            .get(tasks.videoswap)    ;}; 

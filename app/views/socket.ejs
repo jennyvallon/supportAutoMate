@@ -1,0 +1,41 @@
+
+<!doctype html>
+<html>
+    <head>
+        <title><%=title %></title>
+        <style>
+            body { font: 13px monospace; }
+        </style>
+    </head>
+    <body>
+        <p id="log"></p>
+
+        <script src="/js/socket.io.js"></script>
+        <script>
+            var socket = io();
+            var param="ticketNum";//the identifying param that will point to the corresponding log file
+            var paramIndex=window.location.href.indexOf(param);
+            var paramLength=param.length;
+           
+            
+            //plus 1 is added for the "=" sign
+            var result=window.location.href.slice(paramIndex+paramLength+1);//Will return a string that begins with the value of the param
+            
+            var firstAmp= function(){
+                var amp=result.indexOf("&");
+                if(amp===-1){return null}else{return amp}
+            }
+            
+            var data=function(){ 
+                if(firstAmp()===null){return result;}
+                else{return result.slice(0,firstAmp());}
+            }
+            
+            setInterval(function(){socket.emit('retrieve log',data())},500); 
+            
+            socket.on('log', function (data) {
+                document.querySelector("#log").innerText=data;
+            });
+        </script>
+    </body> 
+</html>

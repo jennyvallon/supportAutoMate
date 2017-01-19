@@ -1,0 +1,73 @@
+Thu Jan 19 2017 10:44:30 GMT-0500 (EST) ===> autoMate is beginning your video swap the following parameters...
+Thu Jan 19 2017 10:44:30 GMT-0500 (EST) ===> Ticket Number:13161
+Thu Jan 19 2017 10:44:30 GMT-0500 (EST) ===> Content ID for video being swapped out: 31869716
+Thu Jan 19 2017 10:44:30 GMT-0500 (EST) ===> Source for new video asset: http://cmgdigital.brightcove.com.edgesuite.net/1418563061/201701/2862/1418563061_5288039895001_5287661536001.mp4
+
+
+Thu Jan 19 2017 10:44:30 GMT-0500 (EST) ===> Automated browser opened
+
+
+Thu Jan 19 2017 10:44:31 GMT-0500 (EST) ===> Asset downloaded from the following location: http://cmgdigital.brightcove.com.edgesuite.net/1418563061/201701/2862/1418563061_5288039895001_5287661536001.mp4
+
+
+Thu Jan 19 2017 10:44:32 GMT-0500 (EST) ===> Logging in to File Details for Content Records with the following parameters...
+Thu Jan 19 2017 10:44:32 GMT-0500 (EST) ===> URL: http://hurricane:blizzard@monitortool.newsinc.com/manage/getcontentdetails.php
+Thu Jan 19 2017 10:44:32 GMT-0500 (EST) ===> Searching for: 31869716
+
+
+Thu Jan 19 2017 10:44:34 GMT-0500 (EST) ===> Storing file names...
+Thu Jan 19 2017 10:44:34 GMT-0500 (EST) ===> Thumbnail file name: 49301802.jpg
+Thu Jan 19 2017 10:44:34 GMT-0500 (EST) ===> Video file name: 1418563061_5288039895001_5287661536001.mp4
+
+
+Thu Jan 19 2017 10:44:34 GMT-0500 (EST) ===> Asset downloaded from the following location: http://content.newsinc.com/jpg/472/31869716/49301802.jpg
+
+
+Thu Jan 19 2017 10:44:34 GMT-0500 (EST) ===> Logging into Control Room with the following credentials...
+Thu Jan 19 2017 10:44:34 GMT-0500 (EST) ===> Username: administrator
+Thu Jan 19 2017 10:44:34 GMT-0500 (EST) ===> Password: p74e7Ceaa6
+Thu Jan 19 2017 10:44:39 GMT-0500 (EST) ===> Control Room login successful
+Thu Jan 19 2017 10:44:40 GMT-0500 (EST) ===> Attempting admin impersonation using Partner Id: 22222
+Thu Jan 19 2017 10:44:42 GMT-0500 (EST) ===> Admin Impersonation Successful
+
+
+Thu Jan 19 2017 10:44:45 GMT-0500 (EST) ===> Entering Control Room's Media Manager
+
+
+Thu Jan 19 2017 10:44:45 GMT-0500 (EST) ===> Attempting to upload video in Control Room with the following parameters...
+Thu Jan 19 2017 10:44:45 GMT-0500 (EST) ===> Video Path: /Users/jvallon/Downloads/1418563061_5288039895001_5287661536001.mp4
+Thu Jan 19 2017 10:44:45 GMT-0500 (EST) ===> Thumbnail Path: /Users/jvallon/Downloads//Users/jvallon/Downloads/49301802.jpg
+Thu Jan 19 2017 10:44:45 GMT-0500 (EST) ===> Title: autoMate performing video swap for ticket #13161
+Thu Jan 19 2017 10:44:45 GMT-0500 (EST) ===> Description: video swap request handled by autoMate on Thu Jan 19 2017 10:44:30 GMT-0500 (EST)
+Thu Jan 19 2017 10:44:45 GMT-0500 (EST) ===> Event Date: 1/18/2017
+Thu Jan 19 2017 10:44:47 GMT-0500 (EST) ===> Submitted video for upload
+Thu Jan 19 2017 10:44:56 GMT-0500 (EST) ===> Files successfully uploaded!
+
+
+Thu Jan 19 2017 10:44:56 GMT-0500 (EST) ===> Entered Control Room's 'Search Video' Tab
+Thu Jan 19 2017 10:44:57 GMT-0500 (EST) ===> Beginning capture process for new Video Id
+Thu Jan 19 2017 10:44:57 GMT-0500 (EST) ===> This process may take several minutes
+Thu Jan 19 2017 10:45:03 GMT-0500 (EST) ===> Still searching for content ID
+
+
+Thu Jan 19 2017 10:45:03 GMT-0500 (EST) ===> Video Id capture process has been successful
+Thu Jan 19 2017 10:45:03 GMT-0500 (EST) ===> ID for new video content: 31872113
+Thu Jan 19 2017 10:45:03 GMT-0500 (EST) ===> ID for new video content: 31872113
+Thu Jan 19 2017 10:45:03 GMT-0500 (EST) ===> Going to ManageTool URL: http://tools.newsinc.com/manage
+Thu Jan 19 2017 10:45:03 GMT-0500 (EST) ===> Attempting to bypass Gmail Login using the following credentials:
+Thu Jan 19 2017 10:45:03 GMT-0500 (EST) ===> Username: jvallon@newsinc.com
+Thu Jan 19 2017 10:45:03 GMT-0500 (EST) ===> Password: Inform.9876
+Thu Jan 19 2017 10:45:05 GMT-0500 (EST) ===> Bypass successful
+Thu Jan 19 2017 10:45:06 GMT-0500 (EST) ===> Checked off 'Content Search'
+Thu Jan 19 2017 10:45:06 GMT-0500 (EST) ===> Searching for 31869716
+Thu Jan 19 2017 10:45:06 GMT-0500 (EST) ===> Waiting...
+Thu Jan 19 2017 10:45:34 GMT-0500 (EST) ===> Found Entry
+Thu Jan 19 2017 10:45:35 GMT-0500 (EST) ===> Changing content Id to 31872113
+Thu Jan 19 2017 10:45:35 GMT-0500 (EST) ===> Clicked Save
+Thu Jan 19 2017 10:45:35 GMT-0500 (EST) ===> Save successful. Returned script is:
+Thu Jan 19 2017 10:45:35 GMT-0500 (EST) ===> exec usp_ContentAssetTransfer @sourcecontentid='31872113', @destinationcontentid='31869716'
+
+
+Thu Jan 19 2017 10:45:35 GMT-0500 (EST) ===> autoMate has completed this video swap
+Thu Jan 19 2017 10:45:35 GMT-0500 (EST) ===> This log was been archived and will be accessible via the following URL:
+Thu Jan 19 2017 10:45:35 GMT-0500 (EST) ===> localhost:4000/logs?log=13161

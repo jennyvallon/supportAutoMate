@@ -13,6 +13,8 @@
     "ejs": "latest",
     "express": "~4.8.8",
     "express-session": "^1.14.0",
+    "fs": "0.0.2",
+    "http": "0.0.0",
     "method-override": "latest",
     "mongoose": "4.5.1",
     "passport": "^0.3.2",
@@ -21,6 +23,7 @@
     "run-series": "^1.1.4",
     "selenium-webdriver": "^3.0.1",
     "session-file-store": "^0.2.0",
+    "socket.io": "^1.7.2",
     "uid": "0.0.2"
   },
   "devDependencies": {

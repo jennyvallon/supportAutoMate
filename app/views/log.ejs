@@ -1,0 +1,34 @@
+
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        <style>
+            body { font: 13px monospace; }
+        </style>
+    </head>
+    <body>
+        <p id="log"></p>
+
+        <script src="/js/socket.io.js"></script>
+        <script>
+            var socket = io();
+            
+            var url=window.location.href;
+             
+
+            var urlArray=url.split("?");//url must have query params
+
+            
+            var data=urlArray[urlArray.length-1];
+            
+
+            socket.emit('retrieve log',data)
+            
+            socket.on('log', function (data) {
+                document.querySelector("#log").innerText=data;
+            });
+
+        </script>
+    </body> 
+</html>

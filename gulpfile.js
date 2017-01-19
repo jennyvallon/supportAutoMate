@@ -10,6 +10,6 @@ gulp.task('start', function () {
   nodemon(config.nodemon.options);
 });
 
-gulp.task('default', gulp.parallel('runSeleniumServer','start'));
+gulp.task('default', gulp.parallel('runSeleniumServer','start')); 
 
    
