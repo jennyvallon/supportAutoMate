@@ -13,22 +13,15 @@
         <script src="/js/socket.io.js"></script>
         <script>
             var socket = io();
-            
+
             var url=window.location.href;
-             
-
-            var urlArray=url.split("?");//url must have query params
-
-            
+            var urlArray=url.split("<%=splitter %>");//url must have query params
             var data=urlArray[urlArray.length-1];
-            
-
+             
             socket.emit('retrieve log',data)
-            
             socket.on('log', function (data) {
                 document.querySelector("#log").innerText=data;
-            });
-
+            }); 
         </script>
     </body> 
 </html>

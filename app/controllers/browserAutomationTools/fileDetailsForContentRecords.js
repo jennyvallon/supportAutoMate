@@ -4,8 +4,9 @@
 var By =require('selenium-webdriver').By;
 var until =require('selenium-webdriver').until;
 
-var goTo=require('../../config.controller');  
-var func=require('../toolAgnostic.func'); 
+var goTo=require('../login.credentials');  
+var func=require('./toolAgnostic.func'); 
+var log=require('../allOtherMiddleware/logging');
 
 
 var findLargestJpeg=function(){
@@ -33,9 +34,9 @@ exports.downloadVideoThumbnail=function(browser,videoID,res,req,logId){
 
 exports.login=function(browser,key,logId){ //login and find 
     return new Promise(function (resolve){
-        func.log(logId,"Logging in to File Details for Content Records with the following parameters...",true);
-        func.log(logId,"URL: "+goTo.fileDetailsForContentRecords);
-        func.log(logId,"Searching for: "+key);
+        log.log(logId,"Logging in to File Details for Content Records with the following parameters...",true);
+        log.log(logId,"URL: "+goTo.fileDetailsForContentRecords);
+        log.log(logId,"Searching for: "+key);
 
         browser.get(goTo.fileDetailsForContentRecords);
         browser.findElement(By.name("contentid")).sendKeys(key);

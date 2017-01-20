@@ -2,9 +2,8 @@
 var By =require('selenium-webdriver').By;
 var until =require('selenium-webdriver').until;
 
-var goTo=require('../config.controller'); 
-
-var fs=require('fs');
+var goTo=require('../login.credentials'); 
+var log=require('../allOtherMiddleware/logging');
 
 
 
@@ -45,7 +44,7 @@ exports.downloadAsset=function(browser,assetUrl,logId){ // downloads file passed
         browser.get(goTo.host);
         browser.executeScript(createDownloadLink,assetUrl);
         browser.findElement(By.id('clickMe')).click(); 
-        log(logId,"Asset downloaded from the following location: "+ assetUrl, true);
+        log.log(logId,"Asset downloaded from the following location: "+ assetUrl, true);
         resolve(true);
     });
 };
@@ -63,32 +62,6 @@ exports.uniqueNumberFunction = (function() {
         return i++;
     };
 })(); 
-
-exports.openLog=function(ticketNum){
-    var fileName=ticketNum+".txt";
-    var num=fs.openSync("./logs/"+fileName,"a");
-    return num;
-};
-
-var log=function(ticketNum, message, param){
-    var fileName=ticketNum+".txt";
-    if(param){
-        fs.appendFileSync("./logs/"+fileName,"\r\n\r\n"+new Date()+" ===> "+message+"\r\n");
-    }else{fs.appendFileSync("./logs/"+fileName,new Date()+" ===> "+message+"\r\n");}
-};
- 
-exports.log=log;
-
-exports.closeLog=function(fd){
-    fs.close(fd);
-};
-
-exports.serveLog=function(req,res){
-    res.render('log',{});
-    //page-level js is updating <title>
-    //socket-events are getting log file because it will preserve formatting
-    
-};
 
 
 

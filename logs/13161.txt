@@ -70,4 +70,4 @@ Thu Jan 19 2017 10:45:35 GMT-0500 (EST) ===> exec usp_ContentAssetTransfer @sour
 
 Thu Jan 19 2017 10:45:35 GMT-0500 (EST) ===> autoMate has completed this video swap
 Thu Jan 19 2017 10:45:35 GMT-0500 (EST) ===> This log was been archived and will be accessible via the following URL:
-Thu Jan 19 2017 10:45:35 GMT-0500 (EST) ===> localhost:4000/logs?log=13161
+Thu Jan 19 2017 10:45:35 GMT-0500 (EST) ===> localhost:4000/logs?13161

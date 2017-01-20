@@ -8,27 +8,31 @@ var selenium =require('selenium-webdriver');
 var By =require('selenium-webdriver').By;
 var until =require('selenium-webdriver').until;
 
-var controlRoom=require('../tools/controlRoom/func');
-var func=require('../tools/toolAgnostic.func');
-var fileDetailsForContentRecord=require('../tools/fileDetailsForContentRecords/func');
-var manageTool=require('../tools/manageTool/func');
-var goTo=require('../../controllers/config.controller');
+var controlRoom=require('../browserAutomationTools/controlRoom');
+var func=require('../browserAutomationTools/toolAgnostic.func');
+var fileDetailsForContentRecord=require('../browserAutomationTools/fileDetailsForContentRecords');
+var manageTool=require('../browserAutomationTools/manageTool');
+var goTo=require('../../controllers/login.credentials');
+
+var log=require('../allOtherMiddleware/logging');
+//var handleIt=require('../allOtherMiddleware/errorHandling');
+
 
 module.exports=function(req,res,next){
     var logId=req.query.ticketNum;
-    var currentlog=func.openLog(logId);
+    var currentlog=log.openLog(logId);
     var now=new Date();
     var key={
-        title:"autoMate performing video swap for ticket #"+req.query.ticketNum, 
+        title:"autoMate performing video swap30 for ticket #"+req.query.ticketNum, 
         description:"video swap request handled by autoMate on "+now
     }; 
     var browser=new selenium.Builder().forBrowser('chrome').build();
      
-    func.log(logId, "autoMate is beginning your video swap the following parameters...");
-    func.log(logId, "Ticket Number:"+ req.query.ticketNum);
-    func.log(logId, "Content ID for video being swapped out: "+ req.query.oldVideoId);
-    func.log(logId,"Source for new video asset: "+req.query.newVideoURL);
-    func.log(logId,"Automated browser opened",true);
+    log.log(logId, "autoMate is beginning your video swap the following parameters...");
+    log.log(logId, "Ticket Number:"+ req.query.ticketNum);
+    log.log(logId, "Content ID for video being swapped out: "+ req.query.oldVideoId);
+    log.log(logId,"Source for new video asset: "+req.query.newVideoURL);
+    log.log(logId,"Automated browser opened",true);
     
     browser.wait(function(){return func.downloadAsset(browser,req.query.newVideoURL,logId);}).
     then(browser.wait(function(){return fileDetailsForContentRecord.login(browser,req.query.oldVideoId,logId);})).
@@ -38,9 +42,9 @@ module.exports=function(req,res,next){
             console.log(url);
             res.locals.thumbnail=func.getFileName(url);
             res.locals.video=func.getFileName(req.query.newVideoURL); 
-            func.log(logId,"Storing file names...",true);
-            func.log(logId,"Thumbnail file name: "+ res.locals.thumbnail);
-            func.log(logId,"Video file name: "+ res.locals.video);
+            log.log(logId,"Storing file names...",true);
+            log.log(logId,"Thumbnail file name: "+ res.locals.thumbnail);
+            log.log(logId,"Video file name: "+ res.locals.video);
 
             browser.wait(function(){return func.downloadAsset(browser,url,logId);}).
             then(browser.wait(function(){return controlRoom.login(browser,logId);})).
@@ -51,7 +55,7 @@ module.exports=function(req,res,next){
                 then(function(id){
 
                     res.locals.newVideoID=id;
-                    func.log(logId,"ID for new video content: "+ res.locals.newVideoID);
+                    log.log(logId,"ID for new video content: "+ res.locals.newVideoID);
 
                     browser.wait(function(){return manageTool.login(browser,logId);}).
                     then(browser.wait(function(){return manageTool.enableSearchContent(browser,logId);})).
@@ -61,10 +65,10 @@ module.exports=function(req,res,next){
                     then(browser.wait(function(){return manageTool.changeContentID(browser,res.locals.newVideoID,logId);})).
                     then(browser.wait(function(){return manageTool.save(browser,res,req,logId);})).
                     then(function(){
-                        func.log(logId,"autoMate has completed this video swap",true);
-                        func.log(logId,"This log was been archived and will be accessible via the following URL:");
-                        func.log(logId,goTo.host+"logs?log="+logId);  
-                        func.closeLog(currentlog);
+                        log.log(logId,"autoMate has completed this video swap",true);
+                        log.log(logId,"This log was been archived and will be accessible via the following URL:");
+                        log.log(logId,log.config.url(logId));  
+                        log.closeLog(currentlog);
                     });
                 })
             );
