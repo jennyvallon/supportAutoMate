@@ -15,7 +15,7 @@ var manageTool=require('../browserAutomationTools/manageTool');
 var goTo=require('../../controllers/login.credentials');
 
 var log=require('../allOtherMiddleware/logging');
-//var handleIt=require('../allOtherMiddleware/errorHandling');
+
 
 
 module.exports=function(req,res,next){
