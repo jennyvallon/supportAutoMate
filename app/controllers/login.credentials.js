@@ -17,5 +17,6 @@ module.exports={
         url:"http://tools.newsinc.com/manage",
         username:"jvallon@newsinc.com",
         password:"Inform.9876"
-    }       
+    },
+    initializeFeeds:"http://admin:ndnAdmin123$@http://content-import-api.newsinc.com/ingestion/api/v1/management/feeds/initialize"
 };
