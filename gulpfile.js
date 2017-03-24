@@ -1,5 +1,4 @@
 var gulp = require('gulp');
-var concat = require('gulp-concat');//concatonate code into a single file
 var config = require('./gulpfile/config.js');//external config file used to implement more control over builds
 var nodemon = require('gulp-nodemon');
 var funct = require('./gulpfile/functions.server.gulpfile');
